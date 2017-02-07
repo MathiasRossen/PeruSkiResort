@@ -9,7 +9,7 @@ namespace PeruSkiResort
 {
     class Program
     {
-        int numberOfSkiiers = 300;
+        int numberOfSkiers = 300;
         List<Skier> liftQueue = new List<Skier>();
         List<LiftCabin> liftAB1 = new List<LiftCabin>();
         Slope slopeAB1 = new Slope("slopeAB1", 'A', 'B');
@@ -31,7 +31,7 @@ namespace PeruSkiResort
 
         private void Boot()
         {
-            for(int i = 0; i < numberOfSkiiers; i++)
+            for(int i = 0; i < numberOfSkiers; i++)
             {
                 liftQueue.Add(new Skier(i + 1, 'B'));
             }
@@ -75,6 +75,14 @@ namespace PeruSkiResort
             if (currentLift > 4)
                 return 0;
             return currentLift;
+        }
+
+        private void AddSkiersToQueue(List<Skier> skiers)
+        {
+            foreach(Skier skier in skiers)
+            {
+                liftQueue.Add(skier);
+            }
         }
     }
 }

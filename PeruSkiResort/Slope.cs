@@ -52,5 +52,10 @@ namespace PeruSkiResort
                 skiersOnSlope.Add(skier);
             }
         }
+
+        private void SkierReachesBottom(Skier skier)
+        {
+            skier.Location = Bottom;
+        }
     }
 }
